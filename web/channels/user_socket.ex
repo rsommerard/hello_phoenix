@@ -2,8 +2,9 @@ defmodule HelloPhoenix.UserSocket do
   use Phoenix.Socket
 
   ## Channels
-  # channel "room:*", HelloPhoenix.RoomChannel
-
+  channel "rooms:*", HelloPhoenix.RoomChannel, via: [Phoenix.Transports.WebSocket]
+  channel "foods:*", HelloPhoenix.FoodChannel
+  
   ## Transports
   transport :websocket, Phoenix.Transports.WebSocket
   # transport :longpoll, Phoenix.Transports.LongPoll
